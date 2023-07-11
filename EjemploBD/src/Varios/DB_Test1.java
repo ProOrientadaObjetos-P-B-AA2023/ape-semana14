@@ -1,7 +1,12 @@
 package Varios;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 public class DB_Test1 {
     public static void main(String[] args) throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:sqlite:dbTest1.db");
+        Connection connection = DriverManager.getConnection("jdbc:sqlite:bd/dbTest1.db");
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("select * from Persona");
         while(resultSet.next())
